@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#header_page {
+  position: fixed;
+  display: block;
+  top: 0px;
+  z-index: 999;
+}
+#Space {
+  height: 130px;
+}
+#imgDestop {
+  width: 100vw;
+  position: relative;
+}
+.icon_header {
+  width: 50px;
+  height: 100px;
+  display: flex;
+}
+.des_icon_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header_bottom {
+  display: flex;
+  justify-content: space-around;
+}
+#header_top {
+  width: 100vw;
+  height: 30px;
+  background-color: #22165e;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header_main {
+  background-color: #302aaf;
+  width: 100vw;
+  height: 95px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 15px;
+}
+
+#header_search {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#header_search input {
+  width: 560px;
+}
+#cart {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px;
+}
+#icon_cart {
+  width: 25px;
+  height: 25px;
+}
+#header_main a {
+  color: #ffffff;
+  text-decoration: none;
+}
+#header_link_product {
+  display: flex;
+  gap: 25px;
+  padding-left: 20px;
+}
+#header_fiveStar {
+  display: flex;
+  justify-content: center;
+}
+#header_des_img {
+  width: 500px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#header_button {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+#header_button a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.Button {
+  background-color: #302aaf;
+  color: #ffffff;
+}
+a {
+  /* text-decoration: none; */
+  color: #ffffff;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+#topbrands {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #eff1ff;
+  text-align: center;
+  padding: 20px;
+}
+
+#topbrand_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+#topbrand_bot {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.img_topbrands {
+  width: 263px;
+  height: 263px;
+}
+.link_topbrand {
+  width: 472px;
+  height: 394px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: black;
+}
