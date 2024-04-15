@@ -1,20 +1,18 @@
 import React from "react";
 import Header from "../components/Header";
-import Herder_noFix from "../components/Herder_noFix";
-import TopBrands from "../components/TopBrands";
+import MainCart from "../components/page_cart/MainCart";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 
-const Home = () => {
+const Cart = () => {
   return (
     <div>
       <Header />
-      <Herder_noFix />
-      <TopBrands />
+      <MainCart />
       <Footer />
       <ScrollToTop />
     </div>
   );
 };
 
-export default Home;
+export default Cart;

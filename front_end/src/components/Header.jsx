@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Button, Input } from "antd";
+import { Input } from "antd";
 import { CiShoppingCart } from "react-icons/ci";
-import { MdOutlineStarPurple500 } from "react-icons/md";
-import { FaArrowRight } from "react-icons/fa";
+import axios from "axios";
 
 const Header = () => {
+  const [user, setUser] = useState({});
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const token = localStorage.getItem("token");
+  const callAPI = async () => {
+    const response = await axios.get(
+      "http://localhost:8000/user/detail-profile",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    // console.log("🚀 ~ callAPI ~ response:", response.data);
+    setUser(response.data);
+  };
+  useEffect(() => {
+    callAPI();
+  }, []);
   return (
     <>
       <div id="Space"></div>
@@ -19,8 +36,14 @@ const Header = () => {
               <p>CamPerfume</p>
             </NavLink>
             <Input placeholder="Search 10,000+ trusted brands" />
-            <NavLink>Sign In</NavLink>
-            <NavLink id="cart">
+            {isLoggedIn ? (
+              <NavLink to="/profile" id="profile">
+                hello {user.name}
+              </NavLink>
+            ) : (
+              <NavLink to="/login">Sign In</NavLink>
+            )}
+            <NavLink to="/cart" id="cart">
               <div id="icon_cart">
                 <CiShoppingCart size={"25px"} />
               </div>
@@ -28,9 +51,8 @@ const Header = () => {
             </NavLink>
           </div>
           <div id="header_link_product">
-            <NavLink>Wommen'Perfume</NavLink>
+            <NavLink to="/perfume">Wommen'Perfume</NavLink>
             <NavLink>Men'Cologne</NavLink>
-            <NavLink>Brands</NavLink>
           </div>
         </div>
       </div>
