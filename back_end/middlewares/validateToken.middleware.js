@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { findOneUser } from "../services/user.service.js";
+import { findOneUserWithoutPassword } from "../services/user.service.js";
 
 const authMiddleware = async (req, res, next) => {
   try {
@@ -10,10 +10,14 @@ const authMiddleware = async (req, res, next) => {
 
     const token = authHeader.split(" ")[1];
     const decodedToken = jwt.verify(token, process.env.KEY_TOKEN);
+    console.log("🚀 ~ authMiddleware ~ decodedToken:", decodedToken);
 
-    const user = await findOneUser({ _id: decodedToken._id });
+    const user = await findOneUserWithoutPassword({ _id: decodedToken._id });
+    console.log("🚀 ~ authMiddleware ~ user:", user);
     if (!user) {
-      return res.status(401).json({ message: "k tim thay nguoi dung theo _id" });
+      return res
+        .status(401)
+        .json({ message: "k tim thay nguoi dung theo _id" });
     }
 
     req.user = user;

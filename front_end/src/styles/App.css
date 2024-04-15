@@ -152,3 +152,199 @@ img {
   gap: 20px;
   color: black;
 }
+
+#header_resister {
+  background-color: #302aaf;
+  width: 100%;
+  height: 60px;
+  padding: 20px;
+  position: fixed;
+}
+#header_resister a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+#main_resister {
+  width: 100%;
+  padding-top: 55px;
+}
+#form_resister {
+  width: 50%;
+  margin: 0 auto;
+  gap: 15px;
+  padding: 20px;
+}
+#form_resister p {
+  color: #555555;
+}
+#form_resister input {
+  width: 100%;
+  height: 40px;
+}
+#form_resister button {
+  width: 100%;
+  height: 60px;
+  background-color: #302aaf;
+  color: #ffffff;
+  text-align: center;
+  font-size: large;
+  border: none;
+}
+#form_resister a {
+  color: #302aaf;
+}
+#form_resister a:hover {
+  text-decoration: underline;
+}
+#form_resister div {
+  margin: 10px;
+}
+#form_resister span {
+  margin-top: 10px;
+}
+#select_gender {
+  width: 100%;
+  height: 40px;
+  font-size: medium;
+}
+#footer_resister {
+  width: 100%;
+  height: 30px;
+  background-color: #302aaf;
+  text-align: center;
+  color: #eff1ff;
+  position: fixed;
+  bottom: 0;
+}
+
+#loginForm {
+  width: 40%;
+  margin: 0 auto;
+  gap: 15px;
+  padding: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  position: relative;
+  top: 50px;
+}
+#loginForm a {
+  text-decoration: none;
+  color: #555555;
+}
+#inputEmail input {
+  width: 100%;
+  height: 40px;
+}
+#inputEmail {
+  display: flex;
+}
+#btn_signUp {
+  width: 100%;
+  height: 40px;
+  background-color: #302aaf;
+  color: #ffffff;
+  text-align: center;
+  font-size: large;
+  border: none;
+  margin-top: 10px;
+}
+#login_radio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+}
+#btn_signIn {
+  width: 100%;
+  height: 40px;
+  background-color: #302aaf;
+  color: #ffffff;
+  text-align: center;
+  font-size: large;
+  border: none;
+  margin-top: 10px;
+}
+#input_password {
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+}
+.signWith {
+  width: 100%;
+  height: 40px;
+  background-color: #ffffff;
+  color: black;
+  text-align: center;
+  font-size: medium;
+  border: 1px solid #302aaf;
+}
+#or {
+  margin: 0 auto;
+}
+
+#main_shop {
+  display: flex;
+  flex-direction: row;
+}
+#profile {
+  color: #ffffff;
+}
+#main_content_profile {
+  padding-top: 100px;
+  width: 60vw;
+  margin: 0 auto;
+}
+#continue_shopping {
+  color: black;
+  text-decoration: none;
+  border: 1px solid black;
+}
+#footer {
+  width: 100%;
+  height: 30px;
+  background-color: #302aaf;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #eff1ff;
+}
+#footer_detailProduct {
+  width: 100%;
+  height: 30px;
+  background-color: #302aaf;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #eff1ff;
+  position: fixed;
+  bottom: 0;
+}
+#scroll {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: 302aaf;
+  filter: brightness(70%);
+}
+#detail_product {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.left {
+  width: 300px;
+  height: auto;
+  margin-right: 2px;
+}
+#img_DTProduct {
+  width: 300px;
+  height: auto;
+}

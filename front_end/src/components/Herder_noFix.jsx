@@ -2,6 +2,7 @@ import { Button } from "antd";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { MdOutlineStarPurple500 } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
 const Herder_noFix = () => {
   return (
@@ -29,12 +30,16 @@ const Herder_noFix = () => {
             </p>
           </div>
           <div id="header_button">
-            <Button size="large" className="Button">
-              SHOP ALL PERFUME <FaArrowRight />
-            </Button>
-            <Button size="large" className="Button">
-              SHOP ALL COLOGNES <FaArrowRight />
-            </Button>
+            <NavLink to="/perfume">
+              <Button size="large" className="Button">
+                SHOP ALL PERFUME <FaArrowRight />
+              </Button>
+            </NavLink>
+            <NavLink to="/cologne">
+              <Button size="large" className="Button">
+                SHOP ALL COLOGNES <FaArrowRight />
+              </Button>
+            </NavLink>
           </div>
           <h4>Free Shipping</h4>
         </div>
