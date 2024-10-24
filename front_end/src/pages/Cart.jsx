@@ -9,7 +9,9 @@ const Cart = () => {
     <div>
       <Header />
       <MainCart />
-      <Footer />
+      <div style={{position:"fixed", bottom:"0px", width:"100%"}} >
+        <Footer />
+      </div>
       <ScrollToTop />
     </div>
   );

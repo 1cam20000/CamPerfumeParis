@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../App";
-import { useNavigate, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { Button, Card, Col } from "antd";
-import { FaStar } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
+import axios from "axios";
 const ShowDetail = () => {
   const today = new Date();
   const [currentMonth, setCurrentMonth] = useState("");
@@ -32,10 +32,32 @@ const ShowDetail = () => {
       : data.type;
   //
   const navigate = useNavigate();
+  const callApiAddCart = async () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      return { error: "Token not found" };
+    }
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    const requestData = {
+      productId: id,
+    };
+    console.log(
+      // "🚀 ~ callApiAddCart ~ requestData.productId:",
+      requestData.productId
+    );
+    const response = await axios.post(
+      "http://localhost:8000/product/add-to-card",
+      requestData,
+      { headers }
+    );
+  };
   const handleAddCart = () => {
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     cartItems.push(data);
     localStorage.setItem("cart", JSON.stringify(cartItems));
+    callApiAddCart();
     toast.success("Product added to cart");
     // navigate("/perfume");
   };
@@ -68,6 +90,9 @@ const ShowDetail = () => {
         >
           ADD TO CART
         </Button>
+        <NavLink to="/perfume" style={{ color: "black " }}>
+          Continue shopping
+        </NavLink>
       </div>
       <ToastContainer />
     </div>

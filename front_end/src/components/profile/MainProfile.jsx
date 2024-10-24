@@ -16,7 +16,10 @@ const MainProfile = () => {
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const [user, setUser] = useState({});
@@ -41,22 +44,24 @@ const MainProfile = () => {
   const handleEdit = () => {
     setEdit(!edit);
   };
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const response = await axios.put(
       "http://localhost:8000/user/edit-profile",
+      formData,
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       }
     );
-    console.log("🚀 ~ handleSubmit ~ response:", response);
-    console.log("🚀 ~ handleSubmit ~ create token:", response.data);
     if (response.data.message) {
       toast.error(response.data.message);
+      setUser(response.data);
     } else {
       toast.success("Update successfully");
       setEdit(!edit);
+      callAPI();
     }
   };
   const navigate = useNavigate();
@@ -68,10 +73,12 @@ const MainProfile = () => {
   return (
     <div id="main_content_profile">
       <h3>{user.name}'s Account</h3>
+      <br />
       <Button onClick={handleEdit}>edit</Button>
       <Button onClick={handleLogOut}>logout</Button>
+
       {edit && (
-        <div>
+        <div className="div_profile">
           <div>
             <p>password</p>
             <p>
@@ -81,7 +88,7 @@ const MainProfile = () => {
             <input
               type="password"
               name="password"
-              value={formData.password || ""}
+              value={formData.password}
               onChange={(e) => handleChange(e, "password")}
             />
           </div>
@@ -91,8 +98,8 @@ const MainProfile = () => {
               placeholder={user.name}
               type="text"
               name="name"
-              value={formData.name || ""}
-              onChange={handleChange}
+              value={formData.name}
+              onChange={(e) => handleChange(e, "password")}
             />
           </div>
           <div>
@@ -102,7 +109,7 @@ const MainProfile = () => {
               type="number"
               name="age"
               value={formData.age}
-              onChange={handleChange}
+              onChange={(e) => handleChange(e, "password")}
             />
           </div>
           <div>
@@ -111,8 +118,8 @@ const MainProfile = () => {
               placeholder={user.address}
               type="text"
               name="address"
-              value={formData.address || ""}
-              onChange={handleChange}
+              value={formData.address}
+              onChange={(e) => handleChange(e, "password")}
             />
           </div>
           <div>
@@ -121,8 +128,8 @@ const MainProfile = () => {
               placeholder={user.phone}
               type="tel"
               name="phone"
-              value={formData.phone || ""}
-              onChange={handleChange}
+              value={formData.phone}
+              onChange={(e) => handleChange(e, "password")}
             />
           </div>
           <div>
@@ -130,8 +137,8 @@ const MainProfile = () => {
             <select
               id="select_gender"
               name="gender"
-              value={formData.gender || ""}
-              onChange={handleChange}
+              value={formData.gender}
+              onChange={(e) => handleChange(e, "password")}
             >
               <option value="other">Other</option>
               <option value="male">Male</option>
@@ -144,17 +151,17 @@ const MainProfile = () => {
               placeholder={user.birth}
               type="date"
               name="birth"
-              value={formData.birth || ""}
+              value={formData.birth}
               onChange={handleChange}
             />
           </div>
-          <button type="submit" onClick={handleSubmit}>
+          <button id="apply" type="submit" onClick={handleSubmit}>
             Apply
           </button>
         </div>
       )}
       {!edit && (
-        <div>
+        <div className="div_profile">
           <p>email: {user.email}</p>
           <p>username: {user.name}</p>
           <p>phone: {user.phone}</p>
@@ -162,8 +169,8 @@ const MainProfile = () => {
           <p>birth: {user.birth}</p>
           <p>age: {user.age}</p>
           <p>address: {user.address}</p>
-          <NavLink id="continue_shopping" to="/">
-            Continue Shopping
+          <NavLink id="continue_shopping" to="/perfume">
+            <Button>Continue Shopping</Button>
           </NavLink>
         </div>
       )}

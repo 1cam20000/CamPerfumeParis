@@ -30,7 +30,6 @@ userRouter.post("/resister", async (req, res) => {
       age,
       email,
     });
-
     res.json(newUser);
   }
 });

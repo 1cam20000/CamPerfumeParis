@@ -348,3 +348,103 @@ img {
   width: 300px;
   height: auto;
 }
+/* styles.css */
+#showCart {
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 30px;
+}
+
+#showCart h3 {
+  font-size: 1.5rem;
+}
+#info_product_in_cart {
+  display: flex;
+}
+#showCart table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#showCart th,
+#showCart td {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+#showCart th {
+  text-align: left;
+}
+
+#showCart img {
+  margin-right: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+#showCart button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+}
+/*  */
+#main_content_profile {
+  padding: 20px;
+  padding-top: 100px;
+}
+
+.div_profile {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.div_profile p {
+  margin: 5px 0;
+  font-size: xx-large;
+}
+
+.div_profile input,
+.div_profile select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+#continue_shopping {
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.div_profile button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.div_profile button:hover {
+  background-color: #45a049;
+}
+.div_profile button a {
+  text-decoration: none;
+  color: white;
+}
+#continue_shopping button {
+  background-color: #008CBA;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#continue_shopping button:hover {
+  background-color: #005f6b;
+}

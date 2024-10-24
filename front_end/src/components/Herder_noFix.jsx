@@ -35,9 +35,9 @@ const Herder_noFix = () => {
                 SHOP ALL PERFUME <FaArrowRight />
               </Button>
             </NavLink>
-            <NavLink to="/cologne">
+            <NavLink to="/cosmetics">
               <Button size="large" className="Button">
-                SHOP ALL COLOGNES <FaArrowRight />
+                SHOP ALL COSMETICS <FaArrowRight />
               </Button>
             </NavLink>
           </div>

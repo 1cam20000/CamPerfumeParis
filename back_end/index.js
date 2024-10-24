@@ -5,7 +5,7 @@ import corsMiddleware from "./middlewares/corsOption.js";
 import dotenv from "dotenv";
 import { productRouter } from "./controllers/product.controller.js";
 
-//
+//http://localhost:8000/product/list
 const app = express();
 
 //

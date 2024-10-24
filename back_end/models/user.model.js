@@ -13,7 +13,7 @@ const UserSchema = mongoose.Schema(
     userProducts: [
       {
         type: mongoose.Types.ObjectId,
-        ref: "Product",
+        ref: "product",
       },
     ],
     isDelete: {
